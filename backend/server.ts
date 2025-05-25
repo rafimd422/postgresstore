@@ -3,8 +3,8 @@ import helmet from "helmet";
 import morgan from "morgan"; // Morgan is an HTTP request logger middleware for Node.js
 import cors from "cors";
 import dotenv from "dotenv";
-import productRoutes from "./routes/productRoutes.js";
-import { sql } from "./config/db.js";
+import productRoutes from "./routes/productRoutes.ts";
+import { sql } from "./config/db.ts";
 
 dotenv.config();
 

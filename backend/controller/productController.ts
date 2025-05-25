@@ -1,6 +1,7 @@
-import { sql } from "../config/db.js";
+import type { Request, Response } from "express";
+import { sql } from "../config/db.ts";
 
-export const getProducts = async (req, res) => {
+export const getProducts = async (req: Request, res: Response) => {
   try {
     const products = await sql`
         SELECT * FROM Products
@@ -14,7 +15,7 @@ export const getProducts = async (req, res) => {
   }
 };
 
-export const createProduct = async (req, res) => {
+export const createProduct = async (req: Request, res: Response) => {
   const { name, price, image } = req.body;
   if (!name || !price || !image) {
     return res
@@ -35,7 +36,7 @@ export const createProduct = async (req, res) => {
   }
 };
 
-export const getProduct = async (req, res) => {
+export const getProduct = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
@@ -49,7 +50,7 @@ export const getProduct = async (req, res) => {
     res.status(500).json({ success: false, message: "Internal server Error" });
   }
 };
-export const updateProduct = async (req, res) => {
+export const updateProduct = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   const { name, price, image } = req.body;
@@ -76,7 +77,7 @@ export const updateProduct = async (req, res) => {
   }
 };
 
-export const deleteProduct = async (req, res) => {
+export const deleteProduct = async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {

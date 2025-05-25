@@ -1,4 +1,4 @@
-import { neon } from "@neondatabase/serverless";
+import { neon, type NeonQueryFunction } from "@neondatabase/serverless";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -6,7 +6,7 @@ dotenv.config();
 const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
 
 // creates a SQL connection using our env variables
-export const sql = neon(
+export const sql: NeonQueryFunction = neon(
   `postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}`
 );
 

@@ -1,9 +1,9 @@
 {
   "name": "pern-pstore",
   "version": "1.0.0",
-  "main": "backend/server.js",
+  "main": "backend/server.ts",
   "scripts": {
-    "dev": "nodemon backend/server.js"
+    "dev": "nodemon backend/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,13 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.2",
+    "@types/helmet": "^0.0.48",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^22.15.21",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
