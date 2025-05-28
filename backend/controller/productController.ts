@@ -50,6 +50,7 @@ export const getProduct = async (req: Request, res: Response) => {
     res.status(500).json({ success: false, message: "Internal server Error" });
   }
 };
+
 export const updateProduct = async (req: Request, res: Response) => {
   const { id } = req.params;
 
